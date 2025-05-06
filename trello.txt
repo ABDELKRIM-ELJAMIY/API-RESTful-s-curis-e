@@ -1,0 +1,93 @@
+Voici un **plan Trello structuré** pour ton projet **"API RESTful sécurisée pour 404.js"**, organisé par colonnes (listes) et cartes (tâches), dans l'ordre logique de production. Ce plan suit les exigences du brief (MERN backend sécurisé, 3 types d'authentification, RESTful, validation, modularité, etc.).
+
+---
+
+## 🗂️ Listes Trello proposées :
+
+---
+
+### 📌 À faire (Backlog)
+
+> Toutes les tâches initiales à traiter dans l’ordre logique de conception.
+
+* ✅ Lire le brief attentivement
+* 📁 Créer un dossier de projet Node.js avec `Express`, `Mongoose`
+* 🧩 Installer les dépendances de base :
+  `express`, `mongoose`, `dotenv`, `cors`, `bcrypt`, `express-validator`, `jsonwebtoken`, `express-session`
+* ✏️ Créer un fichier `.env` propre avec variables : PORT, MONGO\_URI, JWT\_SECRET
+* 🧱 Mettre en place l’**architecture MVC modulaire** (routes, controllers, models, middlewares)
+
+---
+
+### 📊 UML & Design (JOUR 1)
+
+> Travailler sur l’aspect conception visuelle et architecture.
+
+* 🧩 Créer le **Diagramme de Cas d’utilisation** (authentification, accès protégé)
+* 📦 Créer le **Diagramme de Classe** (User, Session, Token)
+* 🔄 Créer un **Diagramme de Séquence** (connexion utilisateur + middleware auth)
+* 🎨 Réaliser une **maquette Figma** simple pour la partie UI (facultatif mais conseillé si futur frontend React)
+* 📤 Ajouter les fichiers UML + maquette dans le repo GitHub
+
+---
+
+### 🔧 Backend - Authentification & API (JOUR 2-3)
+
+* 🔒 Créer le modèle `User` (nom, email, password hash, date, rôle)
+* 🔐 Route POST `/register` (validation + hash bcrypt)
+* 🔐 Route POST `/login` (Basic Auth + JWT + Session)
+* 🔐 Route GET `/me` (profil utilisateur connecté)
+* 🔓 Route POST `/logout` (Session et JWT support)
+* 🧪 Intégrer `express-validator` pour valider les champs (register + login)
+* 🛡️ Ajouter un middleware d’erreur global (JSON format)
+* 🧰 Créer un middleware d'authentification :
+
+  * `authBasic.js`
+  * `authJWT.js`
+  * `authSession.js`
+* 🔐 Protéger des routes privées `/me` selon le type d'auth
+
+---
+
+### 🔧 Backend - CORS, Sessions, Middlewares (JOUR 3)
+
+* 🌐 Configurer CORS dynamiquement (prod/dev avec `credentials`, `origin`, etc.)
+* 🔐 Configurer `express-session` (cookie sécurisé + mémoire)
+* ✅ Tester tous les headers pour Basic Auth, JWT token et cookie session
+* 🔄 Modulariser les middlewares et les importer dans les routes
+
+---
+
+### 🧪 Tests & Vérifications (JOUR 4)
+
+* ⚙️ Tester les routes dans Postman : `register`, `login`, `logout`, `me`
+* 🧪 Vérifier les protections sur les routes selon le type d’auth actif
+* ❌ Tester les cas d’erreurs : mauvais token, mauvais mot de passe, session expirée
+* ✅ Valider le hash bcrypt et la comparaison
+
+---
+
+### 📤 Finalisation & Livrables (JOUR 5)
+
+* 🔄 Nettoyer le code : supprimer les `console.log`, organiser les dossiers
+* 🧱 Documenter le README du projet :
+
+  * Description
+  * Installation
+  * Routes disponibles
+  * Technologies utilisées
+* 📊 Ajouter les diagrammes UML (PDF, PNG)
+* 🌐 Ajouter lien Trello dans le README
+* 🎓 Créer une **présentation Canva / PowerPoint**
+* 📅 Préparer ton **argumentaire oral de 5 minutes**
+* 🟢 Faire le **dernier commit GitHub avant dimanche**
+
+---
+
+### ✅ Terminé
+
+> Tu déplaces ici chaque carte quand elle est achevée.
+
+---
+
+Souhaites-tu que je te crée directement ce **tableau Trello complet au format JSON**, que tu pourras **importer** dans Trello ?
